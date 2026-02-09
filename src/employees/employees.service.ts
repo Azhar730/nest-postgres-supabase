@@ -14,4 +14,7 @@ export class EmployeesService {
     const employee = this.employeeRepository.create(employeeData);
     return this.employeeRepository.save(employee);
   }
+  async search(filters: {name?:string; department?: string;}): Promise<Employee[]>{
+    const query = this.employeeRepository.createQueryBuilder('employee')
+  }
 }
